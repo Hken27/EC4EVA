@@ -34,3 +34,8 @@ Untuk menjalankan aplikasi secara lokal, ikuti langkah-langkah berikut:
    ```bash
    git clone https://github.com/username/EC4EVA.git
    cd EC4EVA
+2. **Install dependensi**:
+   flutter pub get
+   
+2. **Jalankan aplikasi**:
+   flutter run
