@@ -12,7 +12,6 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 22, 22, 22),
-        title: const Text('Sign Up', style: TextStyle(color: Colors.white)),
         centerTitle: true,
       ),
       body: Center(
