@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tugas_dua/Controller/auth_controller.dart';
-// import 'package:tugas_dua/View/Auth/admin.dart';
-// import 'package:tugas_dua/View/Auth/client.dart';
-import 'package:tugas_dua/View/Auth/signin_screen.dart';
-import 'package:tugas_dua/View/Auth/signup_screen.dart';
 import 'package:tugas_dua/View/splash_screen.dart';
 
 void main() {
