@@ -33,21 +33,47 @@ class _MerchandisePageState extends State<MerchandisePage> {
     },
   ];
 
-  // Function to launch WhatsApp
-// Function to launch WhatsApp with static message
-  Future<void> _launchWhatsApp(String itemTitle, String imageUrl) async {
-    final String message =
-        "Halo Admin Ganteng, saya ingin membeli $itemTitle.\nHasil Gambar produk:\n$imageUrl";
-    final Uri url = Uri.parse(
-        'https://wa.me/6281359053537?text=${Uri.encodeComponent(message)}');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(
-        url,
-        mode: LaunchMode.externalApplication,
-      );
+  // Function to launch WhatsApp with static message
+  Future<void> _launchWhatsApp(
+      String itemTitle, String imageUrl, String qty) async {
+    if (qty == '0') {
+      // Show a dialog if qty is 0
+      _showQtyErrorDialog();
     } else {
-      throw 'Could not launch $url';
+      final String message =
+          "Halo Admin Ganteng..\n$qty biji $itemTitle⛓️.\nHasil Gambar produk:\n$imageUrl makaciwwww❤️";
+      final Uri url = Uri.parse(
+          'https://wa.me/6281359053537?text=${Uri.encodeComponent(message)}');
+      if (await canLaunchUrl(url)) {
+        await launchUrl(
+          url,
+          mode: LaunchMode.externalApplication,
+        );
+      } else {
+        throw 'Could not launch $url';
+      }
     }
+  }
+
+  // Function to show a dialog when qty is 0
+  void _showQtyErrorDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Peringatan'),
+          content: const Text('Harap mengisi jumlah produk terlebih dahulu.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Tutup'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   // Function to show product details in a dialog
@@ -159,7 +185,11 @@ class _MerchandisePageState extends State<MerchandisePage> {
                             // Buy Button
                             ElevatedButton(
                               onPressed: () => _launchWhatsApp(
-                                  item['title'], item['imageUrl']),
+                                item['title'], // judul item
+                                item['imageUrl'], // imageUrl produk
+                                item['qty']
+                                    .toString(), // qty harus diubah menjadi String
+                              ),
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 16),
