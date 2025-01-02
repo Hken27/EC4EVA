@@ -13,25 +13,33 @@ class _MerchandisePageState extends State<MerchandisePage> {
       'title': 'Merch Week Die First 1',
       'price': 'Rp. 150.000',
       'image': Image.asset('assets/jualan1.jpg'),
+      'imageUrl':
+          'https://drive.google.com/file/d/1RDUan0VxY6uSSw6ilAA2r3j3jYg8s0dY/view?usp=sharing',
       'qty': 0,
       'description': 'Deskripsi singkat produk 1.',
       'size': 'L, XL, XXL',
-      'eventType': 'Casual',
+      'eventType': 'WDF',
     },
     {
       'title': 'Merch Week Die First 2',
       'price': 'SOLD OUT',
       'image': Image.asset("assets/jualan2.jpg"),
+      'imageUrl':
+          'https://drive.google.com/file/d/1-mcsIegoUtyEZQcW9R-bKuLxslFAu0u8/view?usp=sharing',
       'qty': 0,
       'description': 'Deskripsi singkat produk 2.',
       'size': 'M, L, XL',
-      'eventType': 'Formal',
+      'eventType': 'WDF',
     },
   ];
 
   // Function to launch WhatsApp
-  Future<void> _launchWhatsApp() async {
-    final Uri url = Uri.parse('https://wa.me/6281359053537');
+// Function to launch WhatsApp with static message
+  Future<void> _launchWhatsApp(String itemTitle, String imageUrl) async {
+    final String message =
+        "Halo Admin Ganteng, saya ingin membeli $itemTitle.\nHasil Gambar produk:\n$imageUrl";
+    final Uri url = Uri.parse(
+        'https://wa.me/6281359053537?text=${Uri.encodeComponent(message)}');
     if (await canLaunchUrl(url)) {
       await launchUrl(
         url,
@@ -150,7 +158,8 @@ class _MerchandisePageState extends State<MerchandisePage> {
                           children: [
                             // Buy Button
                             ElevatedButton(
-                              onPressed: _launchWhatsApp,
+                              onPressed: () => _launchWhatsApp(
+                                  item['title'], item['imageUrl']),
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 16),
@@ -160,6 +169,7 @@ class _MerchandisePageState extends State<MerchandisePage> {
                                 style: TextStyle(color: Colors.black),
                               ),
                             ),
+
                             // Qty control
                             Row(
                               children: [

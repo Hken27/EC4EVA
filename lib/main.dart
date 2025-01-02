@@ -21,15 +21,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/sign-in', // Set initial route ke halaman SignIn
-      getPages: [
-        GetPage(name: '/sign-in', page: () => const SignInPage()),
-        GetPage(name: '/sign-up', page: () => const SignUpPage()),
-        GetPage(name: '/admin-home', page: () => const SplashView()),
-        GetPage(name: '/client-home', page: () => const SplashView()),
-      ],
+      // initialRoute: '/sign-in', // Set initial route ke halaman SignIn
+      // getPages: [
+      //   GetPage(name: '/sign-in', page: () => const SignInPage()),
+      //   GetPage(name: '/sign-up', page: () => const SignUpPage()),
+      //   GetPage(name: '/admin-home', page: () => const SplashView()),
+      //   GetPage(name: '/client-home', page: () => const SplashView()),
+      // ],
       // Arahkan ke halaman SignIn atau SignUp jika pengguna belum login
-      home: const SignInPage(),
+      // home: const SignInPage(),
+      home: const SplashView(),
     );
   }
 }
