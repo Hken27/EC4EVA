@@ -1,4 +1,9 @@
-# EC4EVA
+<div align="center">
+    <img src="assets/ENDLESS CHAIN.png" width="250">
+    
+</div>
+
+# <div align="center">**Endless Chain**</div>
 
 EC4EVA adalah aplikasi Flutter yang dirancang untuk menghadirkan pengalaman unik bagi pecinta musik dan penggemar grup band **Endless Chain**. Aplikasi ini memungkinkan pengguna untuk tetap terhubung dengan dunia musik melalui informasi lengkap tentang event musik, koleksi merchandise eksklusif, serta fitur pembelian dan reservasi yang mudah.
 
