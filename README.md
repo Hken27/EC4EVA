@@ -33,9 +33,12 @@ EC4EVA adalah aplikasi Flutter yang dirancang untuk menghadirkan pengalaman unik
 
 4. **Halaman Menu**  
    Berfungsi sebagai pusat navigasi, memungkinkan pengguna mengakses daftar event, merchandise, atau pengaturan aplikasi dengan cepat.
+   ![Menu](assets/ss2.jpeg)
+
 
 5. **Halaman Merchandise**  
    Berisi koleksi produk eksklusif seperti kaos, poster, dan aksesori lainnya. Setiap produk dilengkapi dengan gambar dan deskripsi singkat.
+   ![Merchant](assets/ss3.jpeg)
 
 ---
 
