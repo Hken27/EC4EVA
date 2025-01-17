@@ -39,6 +39,16 @@ EC4EVA adalah aplikasi Flutter yang dirancang untuk menghadirkan pengalaman unik
 
 ---
 
+## 🛠️ **Teknologi Yang Digunakan**
+
+1. **Flutter**: Framework utama untuk pengembangan aplikasi.  
+
+2. **Dart**: Bahasa pemrograman yang digunakan untuk mengembangkan aplikasi.  
+
+3. **GetX**: Untuk manajemen state dan navigasi.
+
+---
+
 ## 🚀 **Cara Instalasi**
 
 Ikuti langkah-langkah berikut untuk menjalankan aplikasi EC4EVA di perangkat Anda:
@@ -46,3 +56,12 @@ Ikuti langkah-langkah berikut untuk menjalankan aplikasi EC4EVA di perangkat And
 1. Clone repositori ini:
    ```bash
    git clone https://github.com/username/ec4eva.git
+2. Masuk ke direktori proyek:
+   ```bash
+   cd ec4eva
+3. Install semua dependensi yang diperlukan:
+   ```bash
+   flutter pub get
+4. Jalankan aplikasi:
+   ```bash
+   flutter run
